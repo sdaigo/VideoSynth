@@ -16,7 +16,29 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofPushMatrix();
+    // Windowの中心を座標の中心にする
+    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+    // ----------
+    stripePattern();
+    // ----------    
+    ofPopMatrix();
+}
 
+void ofApp::stripePattern() {
+    ofSetColor(ofColor::black);
+    ofSetLineWidth(1.0);
+    ofNoFill();
+    
+    for(int i = -50; i < 50; i++) {
+        ofPushMatrix();
+        ofTranslate(i * 20, 0);
+        ofRotate(i * 5);
+//        ofDrawLine(0, -100, 0, 100);
+        ofScale(6, 6);
+        ofDrawTriangle(0, 0, -50, 100, 50, 100);
+        ofPopMatrix();
+    }
 }
 
 //--------------------------------------------------------------
