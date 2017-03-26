@@ -2,7 +2,11 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    ofSetWindowTitle("Video synth");
+    ofSetWindowShape(1280, 720);
+//    ofSetFullscreen(true);
+    ofSetFrameRate(60);
+    ofBackground(ofColor::white);
 }
 
 //--------------------------------------------------------------
